@@ -24,15 +24,7 @@ def part_1(markov_matrix, deviation=0.00001):
         print_row(n, current_step, step_diff)
 
 
-def generate_state_matrices(initial_matrix, deviation=0.00001):
-    prev_matrix = initial_matrix.copy()
-    while True:
-        current_matrix = prev_matrix @ initial_matrix
-        step_diff = abs(current_matrix - prev_matrix).max()
-        prev_matrix = current_matrix
-        yield current_matrix, step_diff
-        if step_diff <= deviation:
-            break
+
 
 
 def part_2(markov_matrix: array):
